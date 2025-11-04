@@ -3,9 +3,16 @@ subtraktion = "-"
 multiplikation = "x"
 division = "/"
 
-first_number = int(input("Please put in a number"))
-second_number = int(input("Please put in a number"))
-grundrechenart = input("Please type addition, subtraktion, multiplikation or division ")
+while True:
+    try:
+        first_number = int(input("Please type in a number: "))
+        second_number = int(input("Please type in a number: "))
+        break
+    except ValueError:
+        print("Bitte eine Zahl eingeben")
+
+grundrechenart = input("Please type addition, subtraktion, multiplikation or division: ")
+
 if "addition" in grundrechenart:
     print(first_number + second_number)
 elif "subtraktion" in grundrechenart:
@@ -13,4 +20,7 @@ elif "subtraktion" in grundrechenart:
 elif "multiplikation" in grundrechenart:
     print(first_number * second_number)
 elif "division" in grundrechenart:
-    print(first_number / second_number)
+    if second_number == 0:
+        print("warum du durch 0 teilen")
+    else:
+        print(first_number / second_number)
